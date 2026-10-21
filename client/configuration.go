@@ -55,7 +55,7 @@ func NewConfiguration(apiKey string) *Configuration {
 	return &Configuration{
 		APIKey:     apiKey,
 		BaseURL:    DefaultBaseURL,
-		UserAgent:  "allymailer-go-sdk/1.1.1",
+		UserAgent:  "allymailer-go-sdk/1.1.2",
 		HTTPClient: &http.Client{Timeout: 30 * time.Second},
 	}
 }
