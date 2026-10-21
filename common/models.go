@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-// TemplateEngine — Параметр для вибору [шаблонізатора](https://docs.allymailer.com.ua/en/template-engines) — або
+// TemplateEngine — Параметр для вибору [шаблонізатора](https://docs.allymailer.com.ua/ua/template-engines) — або
 // "simple", або "velocity", або "liquid", або "none". За замовчуванням — "simple".
 type TemplateEngine string
 
@@ -192,4 +192,18 @@ type SuccessResponse struct {
 	// Рядок "success".
 	// Допустимі значення: `success`.
 	Status string `json:"status,omitempty"`
+}
+
+// HTMLBody returns an HTML body, with an optional plain-text part.
+func HTMLBody(html string, plaintext ...string) *BodyObject {
+	body := &BodyObject{HTML: &html}
+	if len(plaintext) > 0 {
+		body.Plaintext = &plaintext[0]
+	}
+	return body
+}
+
+// TextBody returns a plain-text body.
+func TextBody(plaintext string) *BodyObject {
+	return &BodyObject{Plaintext: &plaintext}
 }

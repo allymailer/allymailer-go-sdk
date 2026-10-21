@@ -39,7 +39,7 @@ type Client struct {
 	// Template — Ви можете зберегти шаблон на боці AllyMailer і потім посилатися на нього за ідентифікатором. Це не
 	// обов'язково, але вкрай рекомендовано у разі повторюваних email-повідомлень або за великих обсягів
 	// надсилання. AllyMailer підтримує два різні синтаксиси для шаблонів, докладніше читайте
-	// [тут](https://docs.allymailer.com.ua/en/template-engines).
+	// [тут](https://docs.allymailer.com.ua/ua/template-engines).
 	Template *template.TemplateAPI
 
 	// Webhook — AllyMailer дозволяє вам отримувати сповіщення про зміну статусу доставки листа або спам-блокування.
@@ -121,6 +121,9 @@ func NewClientWithConfig(config *client.Configuration) *Client {
 		Obsolete:        obsolete.NewObsoleteAPI(c),
 	}
 }
+
+// APIError is the error of every method (client.APIError): errors.As(err, &apiErr).
+type APIError = client.APIError
 
 // String returns a pointer to v, for optional fields of the requests.
 func String(v string) *string {

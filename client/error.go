@@ -35,6 +35,14 @@ func (e *APIError) Error() string {
 	return fmt.Sprintf("%s (HTTP %d)", e.Message, e.HTTPStatus)
 }
 
+// ErrorCode returns the API error code, 0 when the response has none (Code is nil).
+func (e *APIError) ErrorCode() int {
+	if e.Code == nil {
+		return 0
+	}
+	return *e.Code
+}
+
 // Unwrap returns the underlying error, for errors.Is and errors.As.
 func (e *APIError) Unwrap() error {
 	return e.Err

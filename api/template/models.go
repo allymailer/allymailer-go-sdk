@@ -33,7 +33,7 @@ type TemplateObject struct {
 	// шаблонів із типом редактора "visual" можливе лише через вебінтерфейс.
 	EditorType EditorType `json:"editor_type,omitempty"`
 
-	// Параметр для вибору [шаблонізатора](https://docs.allymailer.com.ua/en/template-engines) — або
+	// Параметр для вибору [шаблонізатора](https://docs.allymailer.com.ua/ua/template-engines) — або
 	// "simple", або "velocity", або "liquid", або "none". За замовчуванням — "simple".
 	TemplateEngine common.TemplateEngine `json:"template_engine,omitempty"`
 
@@ -168,7 +168,7 @@ type TemplateListObject struct {
 	// шаблонів із типом редактора "visual" можливе лише через вебінтерфейс.
 	EditorType EditorType `json:"editor_type,omitempty"`
 
-	// Параметр для вибору [шаблонізатора](https://docs.allymailer.com.ua/en/template-engines) — або
+	// Параметр для вибору [шаблонізатора](https://docs.allymailer.com.ua/ua/template-engines) — або
 	// "simple", або "velocity", або "liquid", або "none". За замовчуванням — "simple".
 	TemplateEngine common.TemplateEngine `json:"template_engine,omitempty"`
 
